@@ -1,0 +1,40 @@
+<%- include("parts/header")%>
+
+    <section class="">
+        <div class="container mx-auto bg-green-500 my-[50px] p-[5px]">
+           
+            <h1 class="text-green-500 text-[30px] text-[white] font-bold text-center py-[100px]">404 ERROR 
+                <br> PAGE NOT FOUND
+            </h1>
+
+
+           
+
+
+
+        </div>
+
+
+
+        <% if(!user){%>
+            <li class="nav-item  mr-[10px]" >
+              <a class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded " href="/signin">Login</a>
+            </li>
+            <li class="nav-item  mr-[10px]">
+              <a class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" href="/signup">Register</a>
+            </li>
+            <%} else {%>
+              <li class="nav-item  mr-[10px]">
+                <a class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" href="/profile1">Profile</a>
+              </li>
+              <%} %>
+
+
+
+
+
+    </section>
+
+
+
+<%- include("parts/footer.ejs")%>

@@ -1,0 +1,35 @@
+<%- include("parts/header")%>
+
+    <section>
+        <div class="container mx-auto  mt-[20px] p-[5px]">
+           
+            <h1 class=" text-[40px] text-gray-600 font-bold text-center">Categories</h1>
+ 
+         <ul class="flex justify-start items-center flex-wrap mt-4  ">
+            <% for (let category of categories ){%>
+                <li class="basis-1/6 flex flex-col items-center mt-2">
+                    <a href="/category/<%= category._id%>" class="flex items-center">
+                        <img src="/img/<%= category.photo %>" class="w-[100px] h-[100px] rounded-full mt-4  object-cover " alt="/<%= category.name %>">
+                        <a href="/category/<%= category._id%>" class="mt-4 font-bold text-gray-600 text-[20px]"><%= category.name %></a>
+    
+                    </a>
+                </li>
+            <%} %>
+         </ul>
+            
+           
+
+
+
+        </div>
+
+
+
+
+
+
+    </section>
+
+
+
+<%- include("parts/footer.ejs")%>

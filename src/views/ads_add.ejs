@@ -1,0 +1,81 @@
+<%- include("parts/header")%>
+
+<% var categories %>       <% var error %>
+
+
+    <section class="py-4">
+        <div class="container mx-auto">
+            <h2 class="text-center  py-4 mb-2 rounded text-[25px]"
+                style=" color: rgb(54, 54, 54); font-weight: 900; box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);"; >
+                Adding Announcement</h2>
+    
+            <form class="mt-[10px] flex flex-col p-10 rounded" method="POST" enctype="multipart/form-data" style="box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);">
+
+
+                <% if(error) {%> <div class=""><%= error %></div> <% } %>
+
+
+                <input type="text" class="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full text-gray-700 font-bold mt-5" name="title" placeholder="Title" required />
+                
+                <select class="mt-5 py-3 bg-indigo-50 px-4 py-2 outline-none rounded-md w-full text-gray-700 font-bold"name="category" id="">
+                    <%for(let category of categories){%>
+                    <option value="<%=category._id%>"> <%=category.name%></option>
+                    <%}%>
+                </select> 
+              <div class="flex justify-between items-center">
+                <input
+                type="text"
+                name="price"
+                class="w-[75%] mt-5 bg-indigo-50 px-4 py-2 outline-none rounded-md w-full text-gray-700 font-bold"
+                placeholder="Price"
+                required
+            />
+            <select class="w-[20%] mt-5 py-3 bg-indigo-50 px-4 py-2 outline-none rounded-md w-full text-gray-700 font-bold"name="currency" id="">
+               
+                <option value="UZS"> UZS </option>
+                <option value="USD"> USD </option>
+                <option value="RUB"> RUB </option>
+              
+            </select> 
+              </div>
+                <input
+                    type="text"
+                    name="phone"
+                    class="mt-5 bg-indigo-50 px-4 py-2 outline-none rounded-md w-full text-gray-700 font-bold"
+                    placeholder="Phone"
+                    required
+                />
+                <input
+                    type="text"
+                    name="location"
+                    class=" mt-5 bg-indigo-50 px-4 py-2 outline-none rounded-md w-full text-gray-700 font-bold"
+                    placeholder="Location"
+                    required
+                />
+    
+    
+                <input
+                    class="mt-5 bg-indigo-50 px-4 py-2 outline-none rounded-md w-full text-gray-700 font-bold"
+                    type="file"
+                    multiple
+                    name="photos"
+                    accept=".png, .jpeg, .jpg"
+                />
+         
+    
+                <textarea
+                    name="description"
+                    id="description"
+                    class="mt-5 bg-indigo-50 px-4 py-2 outline-none rounded-md w-full text-gray-900 font-bold"
+                    placeholder="Description"
+                ></textarea>
+    
+                <button type="submit" class=" w-full mt-5  font-semibold py-2 rounded-md  tracking-wide bg-yellow-500 hover:bg-yellow-400 text-white font-bold py-2 px-4 border-b-4 border-yellow-700 hover:border-yellow-500 rounded" style="font-weight: 900;">ADD</button>
+            </form>
+            
+        </div>
+    </section>
+
+
+
+<%- include("parts/footer.ejs")%>

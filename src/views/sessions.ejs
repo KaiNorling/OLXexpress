@@ -1,0 +1,84 @@
+<%- include("parts/header")%>
+
+    <section>
+        <div class="container mx-auto  mt-[20px] p-[5px]">
+           
+            <h1 class=" text-[40px] text-gray-600 font-bold text-center">User Sessions</h1>
+            <div class="container flex justify-center mx-auto">
+                <div class="flex flex-col">
+                    <div class="w-full">
+                        <div class="border-b border-gray-200 shadow">
+                            <table>
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="px-6 py-2 text-xs text-gray-500">
+                                            ID
+                                        </th>
+                                        <th class="px-6 py-2 text-xs text-gray-500">
+                                           UserAgent
+                                        </th>
+                                     
+                                        <th class="px-6 py-2 text-xs text-gray-500">
+                                            Created_at
+                                        </th>
+                                    
+                                        <th class="px-6 py-2 text-xs text-gray-500">
+                                            Delete
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white">
+                                    <%  for (let session of user_sessions) {%>
+                                        <tr class="whitespace-nowrap">
+                                            <td class="px-6 py-4 text-sm text-gray-500">
+                                               
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                <div class="text-sm text-gray-900">
+                                                    <%= session.user_agent %>
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                <div class="text-sm text-gray-900">
+                                                    
+                                                </div>
+                                            </td>
+
+                                            <td class="px-6 py-4">
+                                                <div class="text-sm text-gray-900">
+                                                    <a href="/users/sessions/delete/<%=session._id%>" class="px-4 py-1 text-sm text-white bg-red-400 rounded">Delete</a>
+                                                </div>
+                                            </td>
+                 
+                                          
+                                        </tr>
+                                    <% } %>
+                 
+
+                                   
+                                  
+            
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         
+            
+           
+
+
+
+        </div>
+
+
+
+
+
+
+    </section>
+
+
+
+<%- include("parts/footer.ejs")%>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {      .content-auto {        content-visibility: auto;      }    }  </style>
+
+</head>
+
+
+<body>
+  <% var error %>
+
+  <section class="bg-blue-500 hover:bg-blue-450">
+    <div class="container  mx-auto  p-[5px] flex items-center flex-col">
+      <h1
+        class=" text-center text-white w-full text-[25px] bg-green-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded mt-[20px]">
+        REGISTER PAGE</h1>
+      <% if (error) {%>
+      <h5
+        class="py-[5px] px-[20px] w-[400px] mt-4 rounded-md  tracking-wide bg-yellow-500 hover:red-yellow-400 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded text-center">
+        <%= error %> </h5>
+      <% }%>
+    </div>
+
+
+
+
+
+      <div
+      class="h-screen container mx-auto  text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded flex justify-center  w-full">
+      <form method="POST" class="mt-[30px]">
+        <div class="bg-white px-10 py-8 rounded-xl w-screen shadow-md max-w-sm">
+          <div class="space-y-4">
+            <h1 class="text-center text-2xl font-semibold text-gray-600">Register</h1>
+
+            <div>
+              <label for="email" class="block mb-1 text-gray-600 font-semibold">Username</label>
+              <input type="text" class="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full text-gray-600"
+                name="username" />
+            </div>
+
+            <div>
+              <label for="email" class="block mb-1 text-gray-600 font-semibold">Email</label>
+              <input type="email" class="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full text-gray-600"
+                name="email" />
+            </div>
+          
+
+
+            <div>
+              <label for="email" class="block mb-1 text-gray-600 font-semibold">Password</label>
+              <input type="password" class="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full text-gray-600"
+                name="password" />
+            </div>
+          </div>
+          <button
+            class=" w-full mt-4  font-semibold py-2 rounded-md  tracking-wide bg-yellow-500 hover:bg-yellow-400 text-white font-bold py-2 px-4 border-b-4 border-yellow-700 hover:border-yellow-500 rounded">Register</button>
+          <div class=" p-[5px] flex justify-between  bg-white rounded p-[10px] ">
+            <a href="/"
+              class=" bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">HOME
+            </a>
+            <a href="/users/signin"
+              class=" bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Login</a>
+
+
+
+          </div>
+        </div>
+      </form>
+    </div>
+
+
+  </section>
+
+
+</body>
+
+</html>
